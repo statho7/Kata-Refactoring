@@ -66,54 +66,7 @@ namespace GildedRoseTests
                 app.UpdateQuality();
             }
 
-            //app.UpdateQuality();
             Assert.Equal(expected, output);
         }
     }
 }
-
-
-//IList<Item> Items = new List<Item>{
-//                new Item ,
-//                new Item ,
-//                new Item ,
-//                new Item ,
-//                new Item ,
-//                new Item
-//                ,
-//                new Item
-//                ,
-//                new Item
-//                {
-//                    Name = "Backstage passes to a TAFKAL80ETC concert",
-//                    SellIn = 5,
-//                    Quality = 49
-//                },
-//				// this conjured item does not work properly yet
-//				new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
-//            };
-
-//var app = new GildedRose(Items);
-
-
-//for (var i = 0; i < 31; i++)
-//{
-//    Console.WriteLine("-------- day " + i + " --------");
-//    Console.WriteLine("name, sellIn, quality");
-//    for (var j = 0; j < Items.Count; j++)
-//    {
-//        System.Console.WriteLine(Items[j].Name + ", " + Items[j].SellIn + ", " + Items[j].Quality);
-//    }
-//    Console.WriteLine("");
-//    app.UpdateQuality();
-//}
-
-//+5 Dexterity Vest, -20, 0
-//Aged Brie, -28, 50
-//Elixir of the Mongoose, -25, 0
-//Sulfuras, Hand of Ragnaros, 0, 80
-//Sulfuras, Hand of Ragnaros, -1, 80
-//Backstage passes to a TAFKAL80ETC concert, -15, 3
-//Backstage passes to a TAFKAL80ETC concert, -20, 3
-//Backstage passes to a TAFKAL80ETC concert, -25, 3
-//Conjured Mana Cake, -27, 0
