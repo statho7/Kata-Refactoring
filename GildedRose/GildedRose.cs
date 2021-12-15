@@ -23,19 +23,19 @@ namespace GildedRoseKata
 
         public Brie(Item item) { _item = item; }
 
-        public override void CheckItem(Item item) {
+        public override void CheckItem(Item _item) {
 
-            item.SellIn = item.SellIn - 1;
-            if (item.SellIn < 0)
+            _item.SellIn = _item.SellIn - 1;
+            if (_item.SellIn < 0)
             {
-                if (item.Quality < 50)
+                if (_item.Quality < 50)
                 {
-                    IncreaseQuality(item);
+                    IncreaseQuality(_item);
                 }
             }
-            if (item.Quality < 50)
+            if (_item.Quality < 50)
             {
-                IncreaseQuality(item);
+                IncreaseQuality(_item);
             }
         }
     }
@@ -45,27 +45,27 @@ namespace GildedRoseKata
         Item _item;
         public Concert(Item item) { _item = item; }
 
-        public override void CheckItem(Item item) {
-            item.SellIn = item.SellIn - 1;
-            if (item.SellIn < 0)
+        public override void CheckItem(Item _item) {
+            _item.SellIn = _item.SellIn - 1;
+            if (_item.SellIn < 0)
             {
-                item.Quality = 0;
+                _item.Quality = 0;
             }
             else
             {
-                if (item.Quality < 50)
+                if (_item.Quality < 50)
                 {
-                    if (item.SellIn < 6)
+                    if (_item.SellIn < 6)
                     {
-                        IncreaseQuality(item, 3);
+                        IncreaseQuality(_item, 3);
                     }
-                    else if (item.SellIn < 11)
+                    else if (_item.SellIn < 11)
                     {
-                        IncreaseQuality(item, 2);
+                        IncreaseQuality(_item, 2);
                     }
                     else
                     {
-                        IncreaseQuality(item);
+                        IncreaseQuality(_item);
                     }
                 }
             }
@@ -77,19 +77,19 @@ namespace GildedRoseKata
         Item _item;
         public Other(Item item) { _item = item; }
 
-        public override void CheckItem(Item item) {
-            item.SellIn = item.SellIn - 1;
+        public override void CheckItem(Item _item) {
+            _item.SellIn = _item.SellIn - 1;
 
-            if (item.SellIn < 0)
+            if (_item.SellIn < 0)
             {
-                if (item.Quality > 0)
+                if (_item.Quality > 0)
                 {
-                    DecreaseQuality(item);
+                    DecreaseQuality(_item);
                 }
             }
-            if (item.Quality > 0)
+            if (_item.Quality > 0)
             {
-                DecreaseQuality(item);
+                DecreaseQuality(_item);
             }
         }
     }
