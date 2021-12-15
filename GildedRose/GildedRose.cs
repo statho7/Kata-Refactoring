@@ -47,9 +47,10 @@ namespace GildedRoseKata
 
         public override void CheckItem(Item _item) {
             _item.SellIn = _item.SellIn - 1;
+
             if (_item.SellIn < 0)
             {
-                _item.Quality = 0;
+                DecreaseQuality(_item, _item.Quality);
             }
             else
             {
