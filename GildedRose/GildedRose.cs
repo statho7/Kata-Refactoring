@@ -1,4 +1,6 @@
-﻿namespace GildedRoseKata;
+﻿using GildedRose.Strategies;
+
+namespace GildedRoseKata;
 public class GildedRose
 {
     IList<Item> Items;
@@ -12,8 +14,11 @@ public class GildedRose
         ItemFactory itemFactory = new ItemFactory();
         Items.ToList().ForEach(item =>
         {
-            var myItem = itemFactory.getItem(item, item.Name);
-            myItem.CheckItem(item);
+            //var myItem = itemFactory.getItem(item, item.Name);
+            //myItem.CheckItem(item);
+
+            var context = new ItemContext(item.Name);
+            context.UpdateItem(item);
         });
     }
 }
