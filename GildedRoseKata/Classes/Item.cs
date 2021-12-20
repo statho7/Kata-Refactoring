@@ -1,31 +1,44 @@
-﻿namespace GildedRoseKata
+﻿global using GildedRose.Strategies;
+
+namespace GildedRoseKata
 {
-    public class Item
+    //public class Item
+    //{
+    //    public string Name { get; set; }
+    //    public int SellIn { get; set; }
+    //    public int Quality { get; set; }
+    //}
+
+    public class Item : IObserver
     {
-        public string name { get; set; }
-        public int sellIn { get; set; }
-        public int quality { get; set; }
+        public string Name { get; set; }
+        public int SellIn { get; set; }
+        public int Quality { get; set; }
 
-        internal Item(string name, int sellIn, int quality)
+        public void Update()
         {
-            this.name = name;
-            this.sellIn = sellIn;
-            this.quality = quality;
+            try
+            {
+                IItemStrategy strategy = StrategyDictionary.keyValuePairs[Name];
+                strategy.UpdateItem(this);
+            }
+            catch (Exception)
+            {
+                IItemStrategy strategy = new OtherStrategy();
+                strategy.UpdateItem(this);
+            }
         }
+    }
 
-        public string Name
-        {
-            get { return this.name; }
-        }
+    public static class StrategyDictionary
+    {
+        public static Dictionary<string, IItemStrategy> keyValuePairs;
+        static StrategyDictionary() { 
+            keyValuePairs = new Dictionary<string,IItemStrategy>();
+            keyValuePairs.Add("Aged Brie", new BrieStrategy());
+            keyValuePairs.Add("Backstage passes to a TAFKAL80ETC concert", new ConcertStrategy());
+            keyValuePairs.Add("Sulfuras, Hand of Ragnaros", new LegendaryStrategy());
 
-        public int SellIn
-        {
-            get { return this.sellIn; }
-        }
-
-        public int Quality
-        {
-            get { return this.quality; }
         }
     }
 }

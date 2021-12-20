@@ -11,14 +11,20 @@ public class MyRose
 
     public void UpdateQuality()
     {
-        ItemFactory itemFactory = new ItemFactory();
-        Items.ToList().ForEach(item =>
-        {
-            //var myItem = itemFactory.getItem(item, item.Name);
-            //myItem.CheckItem(item);
+        //ItemFactory itemFactory = new ItemFactory();
+        //Items.ToList().ForEach(item =>
+        //{
+        //    //var myItem = itemFactory.getItem(item, item.Name);
+        //    //myItem.CheckItem(item);
 
-            var context = new ItemContext(item.Name);
-            context.UpdateItem(item);
-        });
+        //    var context = new ItemContext(item.Name);
+        //    context.UpdateItem(item);
+        //});
+
+        foreach (var item in Items)
+        {
+            item.Update();
+        }
+
     }
 }
