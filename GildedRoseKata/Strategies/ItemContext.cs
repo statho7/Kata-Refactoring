@@ -18,7 +18,7 @@ public class ItemContext
                 _strategy = new LegendaryStrategy();
                 break;
             default:
-                _strategy = new BrieStrategy();
+                _strategy = new OtherStrategy();
                 break;
         }
     }

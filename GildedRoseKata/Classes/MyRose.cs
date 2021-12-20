@@ -1,10 +1,10 @@
 ﻿using GildedRose.Strategies;
 
 namespace GildedRoseKata;
-public class GildedRose
+public class MyRose
 {
     IList<Item> Items;
-    public GildedRose(IList<Item> Items)
+    public MyRose(IList<Item> Items)
     {
         this.Items = Items;
     }

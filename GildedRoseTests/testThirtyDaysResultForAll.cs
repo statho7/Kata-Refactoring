@@ -36,7 +36,7 @@ public class testThirtyDaysResultForAll
 				new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
 
-        GildedRose app = new GildedRose(Items);
+        MyRose app = new MyRose(Items);
 
         string output = "";
         string expected = "+5 Dexterity Vest, -20, 0\n" +
